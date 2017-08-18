@@ -38,7 +38,7 @@ class SetupController @Inject()(usersRepository: UsersRepository,
     eventualResults map { result =>
       val inserted = result.forall(_.ok)
 
-      Ok(inserted)
+      Ok(inserted.toString)
     }
   }
 
