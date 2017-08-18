@@ -4,9 +4,10 @@ import javax.inject.{Inject, Singleton}
 
 import models.UsersRepository
 import play.api.mvc.{Action, AnyContent}
-import utilities.{DateTimeUtility, PasswordUtility}
+import utilities.PasswordUtility
 
 import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
 
 @Singleton
 class SetupController @Inject()(usersRepository: UsersRepository,
