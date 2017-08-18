@@ -49,5 +49,8 @@ GET         /jsRoutes                           controllers.JavascriptRouter.jsR
 GET         /reports/all                        controllers.FeedbackFormsReportController.renderUserFeedbackReports
 GET         /reports/response                   controllers.FeedbackFormsReportController.fetchAllResponsesBySessionId(id: String)
 
+# Setup
+GET         /addusers                           controllers.SetupController.addUsers()
+
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                       controllers.Assets.versioned(path="/public", file: Asset)
