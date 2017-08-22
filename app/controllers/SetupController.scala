@@ -6,6 +6,7 @@ import actors.EmailActor
 import akka.actor.ActorRef
 import models.UsersRepository
 import play.api.mvc.{Action, AnyContent}
+import reactivemongo.bson.BSONDateTime
 import utilities.PasswordUtility
 
 import scala.concurrent.Future
@@ -50,7 +51,8 @@ class SetupController @Inject()(usersRepository: UsersRepository,
             PasswordUtility.encrypt(password),
             PasswordUtility.BCrypt,
             active = true,
-            admin = false))
+            admin = false,
+            BSONDateTime(System.currentTimeMillis)))
     }
 
     val eventualResults = Future.sequence(insertResult)
