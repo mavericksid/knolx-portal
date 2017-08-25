@@ -28,7 +28,7 @@ class SetupController @Inject()(usersRepository: UsersRepository,
       val (username, password) = (usernamePassword.head, usernamePassword(1))
 
       val body =
-        """<p>
+        s"""<p>
           |Hi, <br>
           |Please find your Knolx portal credentials below
           |</p>
