@@ -28,10 +28,17 @@ class SetupController @Inject()(usersRepository: UsersRepository,
       val (username, password) = (usernamePassword.head, usernamePassword(1))
 
       val body =
-        s"""Knolx Portal: http://knolx.knoldus.com
-            |Username: $username
-            |Password: $password
-        """.stripMargin
+        """<p>
+          |Hi, <br>
+          |Please find your Knolx portal credentials below
+          |</p>
+          |
+          |<p>
+          |Knolx Portal: http://knolx.knoldus.com <br>
+          |Username: $username <br>
+          |Password: $password
+          |</p>
+          | """.stripMargin
 
       emailManager ! EmailActor.SendEmail(List(username), "support@knoldus.com", "Knolx Portal Credentials", body)
     }
