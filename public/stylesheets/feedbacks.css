@@ -684,3 +684,11 @@
     outline: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.feedback-author {
+    font-size: 16px;
+    text-shadow: none;
+    word-wrap: break-word;
+    line-height: 1.2em;
+    padding: 0px 15px 0px 15px;
+}
